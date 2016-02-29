@@ -2,8 +2,8 @@
 
 ONVIF is a community to standardize communication between IP-based security products (like cameras).
 
-This project aims to improvement https://github.com/milg0/onvif-java-lib.<br>
-I've tried to convice its author to use to my code but it seems we have different goals: my goal is to create a project that focus on the real Onvif application to develop, **keeping the interaction with the WS as simple as possible** demanding it to Apache CXF lib and not wasting the developer time in writing (and MAINTAINING) code that interacts with ONVIF web services.<br>
+This project aims to improve https://github.com/milg0/onvif-java-lib.<br>
+I've tried to convice its author to use to my code but it seems we have different objectives: my goal is to create a project that focus on the funny part of the development of an ONVIF application, **keeping the interaction with the WS as simple as possible** and delege that annoying part to Apache CXF in order to not waste the developer time in writing (and MAINTAINING) code that interacts with ONVIF web services.<br>
 My wish is to help other developers willing to contribute to an enterprise-level Java library for ONVIF devices.
 
 Apported improvements
