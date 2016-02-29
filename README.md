@@ -2,8 +2,8 @@
 
 ONVIF is a community to standardize communication between IP-based security products (like cameras).
 
-This project aims to improvement https://github.com/milg0/onvif-java-lib.\
-I've tried to convice its author to use to my code but it seems we have different goals: my goal is to create a project that focus on the real Onvif application to develop, **keeping the interaction with the WS as simple as possible** demanding it to Apache CXF lib and not wasting the developer time in writing (and MAINTAINING) code that interacts with ONVIF web services.\
+This project aims to improvement https://github.com/milg0/onvif-java-lib.<br>
+I've tried to convice its author to use to my code but it seems we have different goals: my goal is to create a project that focus on the real Onvif application to develop, **keeping the interaction with the WS as simple as possible** demanding it to Apache CXF lib and not wasting the developer time in writing (and MAINTAINING) code that interacts with ONVIF web services.<br>
 My wish is to help other developers willing to contribute to an enterprise-level Java library for ONVIF devices.
 
 Apported improvements
@@ -18,7 +18,7 @@ Rebuilding WS stubs
 
 If you need to change the list of managed WSDLs (in onvif/onvif-ws-client/src/main/resources/wsdl) and thus you need to regenerate the WS Java stubs using the [Apache CXF codegen maven plugin](http://cxf.apache.org/docs/maven-cxf-codegen-plugin-wsdl-to-java.html), you need to go through the following steps:
  1. **Download Onvif WSDLs** to onvif/onvif-ws-client/src/main/resources/wsdl appending the version before the .wsdl suffix.
- For example, from main dir (onvif) use you can run the following shell commmand:\
+ For example, from main dir (onvif) use you can run the following shell commmand:<br>
 ```wget http://www.onvif.org/onvif/ver10/device/wsdl/devicemgmt.wsdl onvif-ws-client/src/main/resources/wsdl/devicemgmt_2.5.wsdl ```
  1. **Update WSDLLocations constants (if needed)** within class  *de.onvif.utils.WSDLLocations* (module onvif-java)
  1. **Add required url-rewriting rules (if needed)** to onvif/onvif-ws-client/src/main/resources/wsdl/jax-ws-catalog.xml
