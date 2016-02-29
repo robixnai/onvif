@@ -1,0 +1,129 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.onvif</groupId>
+		<artifactId>onvif</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>onvif-ws-client</artifactId>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-codegen-plugin</artifactId>
+				<version>${cxf.version}</version>
+				<executions>
+					<execution>
+						<id>generate-ws-stubs</id>
+<!-- 						<phase>generate-sources</phase> -->
+<!-- 						<goals> -->
+<!-- 						<goal>wsdl2java</goal> -->
+<!-- 						</goals> -->
+						<configuration>
+							<wsdlRoot>${basedir}/src/main/resources/wsdl</wsdlRoot>
+							<sourceRoot>${basedir}/src/main/java</sourceRoot>
+							<includes>
+								<include>*.wsdl</include>
+							</includes>
+							<defaultOptions>
+								<extraargs>
+									<!-- DataMapper compatibility requires that the boolean getters 
+										and setters follow naming conventions for other getters and setters. -->
+									<extraarg>-xjc-Xbg</extraarg>
+									<extraarg>-verbose</extraarg>
+									<extraarg>-catalog</extraarg>
+									<extraarg>${basedir}/src/main/resources/wsdl/jax-ws-catalog.xml</extraarg>
+									<extraarg>-wsdlLocation</extraarg>
+									<extraarg></extraarg>
+								</extraargs>
+							</defaultOptions>
+
+							<!-- <wsdlOptions> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/accesscontrol_1.0.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/accesscontrol_1.0.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/accessrules_1.0.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/accessrules_1.0.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/advancedsecurity_1.2.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/advancedsecurity_1.2.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/deviceio_2.6.1.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/deviceio_2.6.1.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/devicemgmt_2.5.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/devicemgmt_2.5.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/display_2.1.1.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/display_2.1.1.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/accesscontrol_1.0.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/accesscontrol_1.0.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/doorcontrol_1.0.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/doorcontrol_1.0.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/event_2.6.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/event_2.6.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/imaging_2.5.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/imaging_2.5.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/media_2.6.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/media_2.6.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/ptz_2.5.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/ptz_2.5.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/receiver_2.1.1.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/receiver_2.1.1.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/recording_2.5.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/recording_2.5.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/remotediscovery_1.0.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/remotediscovery_1.0.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/replay_2.2.1.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/replay_2.2.1.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- <wsdlOption> -->
+							<!-- <wsdl>${project.basedir}/src/main/resources/wsdl/search_2.4.2.wsdl</wsdl> -->
+							<!-- <wsdlLocation>classpath:wsdl/search_2.4.2.wsdl</wsdlLocation> -->
+							<!-- </wsdlOption> -->
+							<!-- </wsdlOptions> -->
+
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<!-- Boolean getters -->
+					<dependency>
+						<groupId>org.apache.cxf.xjcplugins</groupId>
+						<artifactId>cxf-xjc-boolean</artifactId>
+						<version>3.0.5</version>
+					</dependency>
+					
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
