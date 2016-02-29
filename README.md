@@ -34,3 +34,4 @@ My next goals are:
  1. Create consistent Onvif specifications tags (at least for onvif-ws-client). For example: 2.4, 2.5, etc...
  1. Fix WS-Discovery example (with my camera it doesn't work at all)
  1. Write a simple UI to test the device functionalities
+ 1. Fix offline mode (xml files in *local* folder) 
